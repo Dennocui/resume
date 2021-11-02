@@ -9,7 +9,7 @@ from . forms import ContactForm
 
 # Create your views here.
 
-class IndexCiew(generic.TemplateView):
+class IndexView(generic.TemplateView):
      template_name = "main/index.html"
 
      def get_context_data(self, **kwargs):
@@ -37,7 +37,7 @@ class ContactView(generic.FormView):
         messages.success(self.request, 'Thank you. We will be in touch')
         return super().form_invalid(form)
 
-class PortfolioVview(generic.ListView):
+class PortfolioView(generic.ListView):
     model = Portfolio
     template_name = "main/portfolio.html"
     paginate_by = 10
