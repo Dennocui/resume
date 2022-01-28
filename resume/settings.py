@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-6#5v+1bwd-cvbm4qo(4q%zhr_oa%^7ra&kzs^yy=&78t4vjh_d'
+# SECRET_KEY = 'django-insecure-6#5v+1bw/d-cvbm4qo(4q%zhr_oa%^7ra&kzs^yy=&78t4vjh_d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -143,5 +143,6 @@ MEDIA_ROOT = BASE_DIR / "mediafiles"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
+
 
 django_heroku.settings(locals())
