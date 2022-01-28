@@ -1,5 +1,5 @@
 from os import name
-from django.conf.urls import url
+# from django.conf.urls import url
 from django.db import models
 from django .contrib.auth.models import User
 from django.template.defaultfilters import date, default, slugify, title
