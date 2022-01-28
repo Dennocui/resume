@@ -147,3 +147,4 @@ CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
 
 
 django_heroku.settings(locals())
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
