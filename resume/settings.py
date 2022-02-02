@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-6#5v+1bw/d-cvbm4qo(4q%zhr_oa%^7ra&kzs^yy=&78t4vjh_d'
+SECRET_KEY = 'django-insecure-6#5v+1bw/d-cvbm4qo(4q%zhr_oa%^7ra&kzs^yy=&78t4vjh_d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -120,7 +120,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'
 
 USE_I18N = True
 
@@ -133,13 +133,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 # Cloudinary stuff
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': config('CLOUD_NAME', default=""),
-    'API_KEY': config('API_KEY', default=""),
-    'API_SECRET': config('API_SECRET', default=""),
-}
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),

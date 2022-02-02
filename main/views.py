@@ -16,9 +16,9 @@ class IndexView(generic.TemplateView):
          context = super().get_context_data(**kwargs)
 
          testimonials = Testimonial.objects.filter(is_active=True)
-         certificates = Certificate.objects.filter(is_active=True)
-         blogs = Blog.objects.filter(is_active=True)
-         portfolio = Portfolio.objects.filter(is_active=True)
+         certificates = Certificate.objects.filter(is_active=True).order_by("-date")
+         blogs = Blog.objects.filter(is_active=True).order_by("-timestamp")
+         portfolio = Portfolio.objects.filter(is_active=True).order_by("-date")
 
          context["testimonials"] = testimonials
          context["certificates"] = certificates

@@ -41,7 +41,11 @@
       <div class="row g-4 g-md-3  align-items-center">
         <div class="col-md-auto order-md-last">
           <div class="bannerUserImg">
-            <img src="{{ me.userprofile.avatar.url }}" alt="...">
+            {% if me.userprofile.avatar %}
+            <img src="{{ me.userprofile.avatar.url }}" alt="..." width="110" height="110">
+            {% else %}
+            <img src="{% static 'images/avatar.png' %}" alt="..." width="110" height="110">
+            {% endif %}
           </div>
         </div>
         <div class="col-md">
@@ -51,7 +55,12 @@
             <div class="bannerBtnCol">
               <div class="row">
                 <div class="col-auto">
+                  {% if me.userprofile.cv %}
                   <a download href="{{ me.userprofile.cv.url }}" class="btn btnPrimary">Download Resume</a>
+                  {% else %}
+                  <a download href="#" class="btn btnPrimary" onclick="return false;">Download Resume</a>
+                  {% endif %}
+
                 </div>
                 <div class="col-auto">
                   <a href="{% url 'main:contact' %}" class="btn btnOutline">Contact</a>
@@ -77,7 +86,7 @@
             <div class="keySkillCard">
               {% if sk.image %}
               <div class="ksIconCol">
-                <img src="{{sk.image.url}}" alt="...">
+                <img src="{{sk.image.url}}" alt="..." width="110" height="110">
               </div>
               {% endif %}
               <span class="ksText">{{sk.name}}</span>
@@ -90,7 +99,7 @@
           <h4 class="smTitle pb-3">Coding Skills</h4>
           <div class="progressCol">
             <div class="progressCard">
-              {% for sk in me.userprofile.skills.all %}
+              {% for sk in me.userprofile.skills.all|dictsortreversed:"score" %}
               {% if sk.is_key_skill %}
               <div class="progressCol">
                 <span class="progressLbl">{{sk.name}}</span>
