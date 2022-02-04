@@ -97,9 +97,22 @@ WSGI_APPLICATION = 'resume.wsgi.application'
 #     }
 # }
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'resume',
+        'USER': 'postgres',
+        'PASSWORD': 'times',
+        'HOST': '127.0.0.1',
+        'PORT': '5432'
+
+    }
+}
+
+
 # db_from_env = dj_database_url.config(conn_max_age=600)
 # DATABASES['default'].update(db_from_env)
-DATABASES = { 'default': dj_database_url.config() }
+# DATABASES = { 'default': dj_database_url.config() }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

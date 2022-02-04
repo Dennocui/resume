@@ -4,6 +4,7 @@ from django.db import models
 from django .contrib.auth.models import User
 from django.template.defaultfilters import date, default, slugify, title
 from ckeditor.fields import RichTextField
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -30,7 +31,8 @@ class UserProfile(models.Model):
     title = models.CharField(max_length=200, blank=True, null= True)
     bio = models.TextField(blank=True, null= True)
     skills = models.ManyToManyField(Skill, blank=True)
-    cv = models.FileField(blank=True, null= True, upload_to="cv")
+    # cv = models.FileField(blank=True, null= True, upload_to="cv")
+    cv = CloudinaryField(resource_type='', blank=True, null= True)  
 
     def __str__(self):
         return f'{self.user.first_name} {self.user.last_name}'
