@@ -8,7 +8,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
-"""
+""" 
 
 from pathlib import Path
 import os 
@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-6#5v+1bw/d-cvbm4qo(4q%zhr_oa%^7ra&kzs^yy=&78t4vjh_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
