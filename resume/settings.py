@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-6#5v+1bw/d-cvbm4qo(4q%zhr_oa%^7ra&kzs^yy=&78t4vjh_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.pythonanywhere.com']
 
 
 # Application definition
@@ -175,8 +175,8 @@ django_heroku.settings(locals())
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': config('CLOUD_NAME', default=""),
-    'API_KEY': config('API_KEY', default=""),
-    'API_SECRET': config('API_SECRET', default=""),
+    'CLOUD_NAME': config('CLOUD_NAME', default="dnf-254"),
+    'API_KEY': config('API_KEY', default="423921957228129"),
+    'API_SECRET': config('API_SECRET', default="xFHDfI33A62_2558Qys4bkJ17R4"),
 }
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
